@@ -14,7 +14,7 @@ If you are the owner you can register your apartment. Apartment Referrals is a p
 
 ### Video Demo
 
-- coming soon 
+- coming soon
 
 # deployed Address
 
@@ -26,12 +26,15 @@ If you are the owner you can register your apartment. Apartment Referrals is a p
 
 Apartment Referrals application makes use of the following software:
 
-- `Matic - Polygon Network` is the network where we deployed our dApp for scalability.
-- `Skale Network` is the network where we deployed our dApp for scalability.
-- `OptimismNetwork` is the network where we deployed our dApp for scalability.
+
+- `Matic - Polygon Network`  enables Apartment Referrals application to be a scalable platform with fast transactions. We deployed our app on the Polygon Network.
+- `Skale Network` enables our app to be on the Skale Network which is the Ethereum-compatible network perfect for security and scalability.
+
+- `Optimism Network` enables our app to be secure and cost-effective. We deployed our app on the Optimism Network
+
 - `ENS Domains` facilitated the lookup process for searching by tenant’s ENS Domain name. This protocol simplified the user experience of our app by allowing landlords to look up users by domain names instead of copying long crypto addresses.
 
-- `Covalent API` facilitated the retrieval of user’s NFTs. The Covalent API endpoints to get all NFTs balance and metadata from a wallet address such us images, contracts name, NFTs images and balances.
+- `Covalent API` facilitated the retrieval of user’s NFTs. The Covalent API endpoints to get all NFTs balance and metadata from a wallet address such as images, contracts name, NFTs images, and balances.
 
 * `IPFS NFTStorage` for data storage on IPFS that generates a transaction hash used to create an NFT of a photo.
 
@@ -39,7 +42,10 @@ Apartment Referrals application makes use of the following software:
 
 * `NFTPort` smooths the path of minting and awarding NFTs to tenants. This is a win-win situation for tenants and landlords because they don't have to pay transactions fee.
 
+
 * `Pocket Network` smooths the path of deploying and the hassle of paying big transactions to deploy our app contract to a node using the Matic, Skale, Optimism, and Rinkeby network.
+
+
 * `Solidity` for the smart contract.
 * `OpenZeppelin ERC721` we use the ERC721 template for faster development of our smart contract.
 
