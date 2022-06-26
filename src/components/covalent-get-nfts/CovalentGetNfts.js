@@ -86,9 +86,23 @@ function CovalentGetNfts({ account }) {
   return (
     <StylesProvider injectFirst>
       <Container style={{ paddingTop: '1rem', paddingBottom: '6rem' }}>
-        <h3 className="text-center">
-          This Domain Tenant has the following NFTs landloard referrals
-        </h3>
+        <div className="search-container">
+          <br />
+          <form className="d-flex ms-auto my-form">
+            <input
+              type="text"
+              class="form-control me-sm-2"
+              placeholder="Alice.eth"
+            />
+            <button
+              type="button"
+              // onClick={search}
+              className="btn btn-primary search-btn"
+            >
+              search
+            </button>
+          </form>
+        </div>
         <br />
 
         {loading ? (
@@ -97,6 +111,10 @@ function CovalentGetNfts({ account }) {
           <div>
             {nfts && nfts?.data ? (
               <div>
+                <h4 className="text-center">
+                  This Domain Tenant has the following NFTs landloard referrals
+                </h4>
+                <br />
                 <p className="info">
                   <strong>Last update: </strong> {nfts.data.updated_at}
                 </p>

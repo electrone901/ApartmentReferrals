@@ -1,10 +1,10 @@
 import React from 'react'
 import './Apartment.css'
 import TabsNabvar from './TabsNabvar'
-const myImg =
-  'https://s3-media0.fl.yelpcdn.com/bphoto/oTMzZGypcGxUkhWGmbBFnw/o.jpg'
+import apt from './apt.png'
+// const myImg =
+//   'https://s3-media0.fl.yelpcdn.com/bphoto/oTMzZGypcGxUkhWGmbBFnw/o.jpg'
 function Apartment() {
-
   return (
     <div className="m-4">
       <h2>Apartment</h2>
@@ -17,8 +17,8 @@ function Apartment() {
 
           <div
             style={{
-              background: `url(${myImg}) no-repeat`,
-              backgroundPosition: 'center top',
+              background: `url(${apt}) no-repeat`,
+              backgroundPosition: 'center bottom',
               backgroundSize: '100%',
               height: '500px',
               display: 'flex',

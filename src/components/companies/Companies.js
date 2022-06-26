@@ -59,9 +59,11 @@ function Companies() {
 
   return (
     <div className="m-4">
-      <p className="small strong">Real estate agents > Home Services </p>
+      <p className="small strong">Real estate referrals > Services </p>
       <div className="display-flex">
-        <h4>Rate your Real Estate Agents and get reward it</h4>
+        <h5>
+          Rate your landloard, building managment and tenants and get rewarded.
+        </h5>
         <p className="small">Sort:Recommended ⌄</p>
       </div>
       <p className="small">
@@ -78,9 +80,6 @@ function Companies() {
               <div className="col">
                 <div className="d-flex justify-content-between align-items-center">
                   <p className="title">{apt.name}</p>
-                  {/* <Link to={`apartment/:id`} className="btn btn-success">
-                    View Details
-                  </Link> */}
 
                   <button
                     size="small"
@@ -103,7 +102,7 @@ function Companies() {
                 </div>
                 <p>
                   <i class="fa fa-check-square"></i> Verified License Real
-                  Estate Agent
+                  Estate Owner
                 </p>
 
                 <p>
@@ -153,15 +152,9 @@ function Companies() {
               <i class="fa fa-calendar-check-o" aria-hidden="true"></i>{' '}
               Available by Appointments
             </p>
-            We recently bought a NYC apartment - our first time purchasing - and
-            we couldn't be more grateful to have had Grant as our broker. He
-            provided invaluable advice and insight at every…” more Responds in
-            about 2 hours 89 locals recently contacted this agent 76 Verified
-            LicenseReal Estate Agents “Efficient” - according to 2 users “My
-            husband and I had the pleasure of working with Grant when planning
-            our move from CA to NYC for this summer. Grant was gracious enough
-            to take his time and show us several…” more Responds in about 2
-            hours 89 locals recently contacted this agent
+            This apartment was great and spacious. The building management was
+            always responsive and effective during our time living there. 100 %
+            reccomedable!
           </div>
         </div>
       </div>

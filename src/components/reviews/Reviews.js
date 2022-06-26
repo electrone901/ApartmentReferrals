@@ -14,7 +14,7 @@ function Reviews() {
             />
           </div>
           <div className="col">
-            <p className="title">The Braswell Team at Compass</p>
+            <p className="title">0xf4eA652F5B7b55f1493631Ea4aFAA63Fe0acc27C</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="ratings">
                 <i className="fa fa-star rating-color"></i>
@@ -23,25 +23,14 @@ function Reviews() {
                 <i className="fa fa-star rating-color"></i>
                 <i className="fa fa-star"></i>
               </div>
-              <p className="">12 Reviews</p>
+              <p className="">Useful Review</p>
             </div>
             <p>
-              <i class="fa fa-check-square"></i> Verified License Real Estate
-              Agent
+              <i class="fa fa-check-square"></i> Verified Tenant
             </p>
-            <p>
-              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>{' '}
-              Available by Appointments
-            </p>
-            We recently bought a NYC apartment - our first time purchasing - and
-            we couldn't be more grateful to have had Grant as our broker. He
-            provided invaluable advice and insight at every…” more Responds in
-            about 2 hours 89 locals recently contacted this agent 76 Verified
-            LicenseReal Estate Agents “Efficient” - according to 2 users “My
-            husband and I had the pleasure of working with Grant when planning
-            our move from CA to NYC for this summer. Grant was gracious enough
-            to take his time and show us several…” more Responds in about 2
-            hours 89 locals recently contacted this agent
+            This apartment was great and spacious. The building management was
+            always responsive and effective during our time living there. 100 %
+            reccomedable!
           </div>
         </div>
       </div>

@@ -32,3 +32,8 @@
 .line-break {
     line-break: anywhere;
 }
+
+.search-container {
+    width: 50%;
+    margin: auto;
+}

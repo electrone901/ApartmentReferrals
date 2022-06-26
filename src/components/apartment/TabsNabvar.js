@@ -100,6 +100,7 @@ class TabsNabvar extends Component {
       descriptionReview: '',
       businessGoal: '',
       EthAmount: 0,
+      success: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -112,6 +113,7 @@ class TabsNabvar extends Component {
   async handleSubmit(event) {
     event.preventDefault()
     console.log('this.state', this.state)
+    this.setState({ success: true })
     // event.preventDefault()
     // console.log('-->', this.state)
     // let json = {
@@ -135,14 +137,12 @@ class TabsNabvar extends Component {
           style={{ height: '45rem' }}
         >
           <br></br>
-          <h1>Welcome to Unbank</h1>
-          <h6>
-            {this.state?.account
-              ? `Account: ${this.state.account}`
-              : 'Please connect your wallet'}
-          </h6>
+          <h4>Your review: </h4>
+          <p>Offer valuable guidance from people who’ve used the service</p>
+          <p>Indicate what’s the best and worse that could happen</p>
+          <p>Make it easier for shoppers to decide</p>
+          <p>Attest to a company’s reliability</p>
           <br></br>
-
           <div className="row p-4">
             <main role="main" className="col-lg- text-center">
               <div className="content mr-auto ml-auto">
@@ -154,7 +154,15 @@ class TabsNabvar extends Component {
                   <Tab eventKey="deposit" title="Add A Review">
                     <div>
                       <br />
-                      Please Add Your Review
+
+                      {this.state.success ? (
+                        <h3 style={{ color: 'green' }}>
+                          Your review has been submitted!
+                        </h3>
+                      ) : (
+                        <p> Please Add Your Review</p>
+                      )}
+
                       <br />
                       <br />
                       <form onSubmit={this.handleSubmit}>
@@ -170,7 +178,7 @@ class TabsNabvar extends Component {
                             type="text"
                             className="form-control"
                             name="descriptionReview"
-                            placeholder="Looking for an apartment in NYC can be a nightmare, but working with Sahar Aubon was an absolute pleasure."
+                            placeholder="This apartment was great and spacious. The building management was always responsive and effective during our time living there. 100 % reccomedable!"
                           />
                         </div>
                         <button className="btn btn-primary">Submit </button>
@@ -178,38 +186,6 @@ class TabsNabvar extends Component {
                     </div>
                   </Tab>
 
-                  <Tab eventKey="withdraw" title="Add A New Price">
-                    <div>
-                      <br />
-                      Add A New Price
-                      <br />
-                      <br />
-                      <div>
-                        <button
-                          type="submit"
-                          className="btn btn-primary"
-                          onClick={(e) => this.withdraw(e)}
-                        >
-                          Withdraw
-                        </button>
-                      </div>
-                    </div>
-                  </Tab>
-
-                  <Tab eventKey="token-Earned" title="PriceHistory">
-                    <div>
-                      <br />
-                      Here Price History
-                      <br />
-                      <br />
-                      <PriceHistory />
-                      <div>
-                        <button type="submit" className="btn btn-primary">
-                          {this.state.tokenBalance}
-                        </button>
-                      </div>
-                    </div>
-                  </Tab>
                   <Tab eventKey="Reviews" title="Reviews">
                     <div>
                       <br />
@@ -217,26 +193,7 @@ class TabsNabvar extends Component {
                       <br />
                       <br />
                       <Reviews />
-                      <div>
-                        <br />
-                        Metamask Wallet
-                        <br />
-                        <button type="submit" className="btn btn-primary">
-                          {this.state.balance}
-                        </button>
-                        <br />
-                        Earned Tokens
-                        <br />
-                        <button type="submit" className="btn btn-primary">
-                          {this.state.tokenBalance}
-                        </button>
-                        <br />
-                        Eth Deposited
-                        <br />
-                        <button type="submit" className="btn btn-primary">
-                          {this.state.depositedBalance}
-                        </button>
-                      </div>
+                      <br /> <br />
                     </div>
                   </Tab>
                 </Tabs>
