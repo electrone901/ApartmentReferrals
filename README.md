@@ -21,13 +21,13 @@ If you are the owner you can register your apartment. Apartment Referrals is a p
 - deployedMaticContract = '0x62dDfd4447E5c894fa7860c1271b5B0293cBCa09'
 - deployedSkaleContract = '0x16d7be29ebc6db2e9c92E0Bf1dE5c1cfe6b1AD2a'
 - deployedOptimismContract ='0x16d7be29ebc6db2e9c92E0Bf1dE5c1cfe6b1AD2a'
+- deployedRinkebyContract ='0x1a2FCb5F2704f1fF8eFF26668f63D001b42bF80B'
 
 # How it's made
 
 Apartment Referrals application makes use of the following software:
 
-
-- `Matic - Polygon Network`  enables Apartment Referrals application to be a scalable platform with fast transactions. We deployed our app on the Polygon Network.
+- `Matic - Polygon Network` enables Apartment Referrals application to be a scalable platform with fast transactions. We deployed our app on the Polygon Network.
 - `Skale Network` enables our app to be on the Skale Network which is the Ethereum-compatible network perfect for security and scalability.
 
 - `Optimism Network` enables our app to be secure and cost-effective. We deployed our app on the Optimism Network
@@ -42,9 +42,7 @@ Apartment Referrals application makes use of the following software:
 
 * `NFTPort` smooths the path of minting and awarding NFTs to tenants. This is a win-win situation for tenants and landlords because they don't have to pay transactions fee.
 
-
-* `Pocket Network` smooths the path of deploying and the hassle of paying big transactions to deploy our app contract to a node using the Matic, Skale, Optimism, and Rinkeby network.
-
+- `Pocket Network` smooths the path of deploying and the hassle of paying big transactions to deploy our app contract to a node using the Matic, Skale, Optimism, and Rinkeby network.
 
 * `Solidity` for the smart contract.
 * `OpenZeppelin ERC721` we use the ERC721 template for faster development of our smart contract.
@@ -81,6 +79,7 @@ Builds the app for production to the `build` folder.
 - npx hardhat init, basic project, deploy
   `to deploy`
   npx hardhat run scripts/sample-script.js --network matic
+  npx hardhat run scripts/sample-script.js --network rinkeby
   npx hardhat run ./scripts/deploy.ts --network localhost
 - connect fronent to MetaMask wallet
 

@@ -34,13 +34,19 @@ function CovalentGetNfts({ account, providerSave }) {
 
   const search = async (e) => {
     e.preventDefault()
+
     // takes in  ensDomain & returns the wallet address
     var result = await providerSave.resolveName(ensNameInput)
+    console.log('🚀result', result)
   }
 
   const covalentNfts = async () => {
+    let ENSName = await providerSave.resolveName(ensNameInput)
+    if (!ENSName) {
+      ENSName = '0xf4eA652F5B7b55f1493631Ea4aFAA63Fe0acc27C'
+    }
     const covalentAPI = 'ckey_d4115699196e4d238fa138e180c'
-    const ENSName = '0xf4eA652F5B7b55f1493631Ea4aFAA63Fe0acc27C'
+
     try {
       const nfts = await fetch(
         `https://api.covalenthq.com/v1/137/address/${ENSName}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=false&key=${covalentAPI}`,
@@ -51,6 +57,7 @@ function CovalentGetNfts({ account, providerSave }) {
         setItems(allNFTS?.data?.items)
         setLoading(false)
       }
+      console.log('rrr')
     } catch (error) {
       console.log(error)
     }
@@ -97,7 +104,7 @@ function CovalentGetNfts({ account, providerSave }) {
             />
             <button
               type="button"
-              // onClick={search}
+              onClick={covalentNfts}
               className="btn btn-primary search-btn"
             >
               search
@@ -107,7 +114,9 @@ function CovalentGetNfts({ account, providerSave }) {
         <br />
 
         {loading ? (
-          <h1>Loading..</h1>
+          <h1 className="text-center ">
+            Please enter an ENS name to bee search
+          </h1>
         ) : (
           <div>
             {nfts && nfts?.data ? (

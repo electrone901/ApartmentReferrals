@@ -42,6 +42,13 @@ module.exports = {
         'a94b13a69756cb84833978359e6eae91cde82135a7501444f3989b4b6b4cea1d',
       ],
     },
+    rinkeby: {
+      url:
+        'https://eth-rinkeby.gateway.pokt.network/v1/lb/62b8802d123e6f0039866020',
+      accounts: [
+        'a94b13a69756cb84833978359e6eae91cde82135a7501444f3989b4b6b4cea1d',
+      ],
+    },
   },
   paths: {
     artifacts: './src/artifacts',
