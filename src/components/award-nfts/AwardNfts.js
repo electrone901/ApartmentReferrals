@@ -29,25 +29,15 @@ function AwardNfts() {
   const showError = () => toast.error('Oops! Some error occurred. Try again! ')
   const showSuccess = () => toast('Yay your NFT was sent successfully!')
 
-  const nftPortTrying = (e) => {
+  const nftPortFunc = (e) => {
     e.preventDefault()
-    // fetch('https://api.nftport.xyz/v0/mints/easy/urls', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     Authorization: '5aca4bfa-4460-4000-ada2-dfe2b88831e8',
-    //   },
-    //   body: `{"chain":"polygon","name":${tenantName},"description":${description},"file_url":${file_url},"mint_to_address":${mintAddress}}`,
-    // })
-
     fetch('https://api.nftport.xyz/v0/mints/easy/urls', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Authorization: '5aca4bfa-4460-4000-ada2-dfe2b88831e8',
       },
-      body:
-        '{"chain":"polygon","name":"Myname","description":"Mydescription","file_url":"https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80","mint_to_address":"0xf4eA652F5B7b55f1493631Ea4aFAA63Fe0acc27C"}',
+      body: `{"chain":"polygon","name":${tenantName},"description":"Mydescription","file_url":${file_url},"mint_to_address":${mintAddress}}`,
     })
       .then((response) => {
         console.log(response)
@@ -196,8 +186,7 @@ function AwardNfts() {
                 className="input"
                 id="icon-button-photo"
                 defaultValue={image}
-                onChange={nftPortTrying}
-                // onChange={mintWithNFTPort}
+                onChange={nftPortFunc}
                 type="file"
               />
 
