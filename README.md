@@ -2,6 +2,8 @@
 
 Apartment Referrals
 
+Valist Site https://app.valist.io/electrone901/nfts-apartment-referrals
+
 # Description
 
 Apartment Referrals is a safeguard for landlords and tenants in this chaotic market. It is an app that brings transparency and accountability to all partners. Ultimately, decreasing wasted time and resources. If you are a tenant you should be able to find your apartment and rate its management, installations, equipment, the building, etcetera. If you are the owner you can register your apartment.
@@ -10,7 +12,7 @@ If you are the owner you can register your apartment. Apartment Referrals is a p
 
 ### Website Demo
 
-- https://apartment-referrals-app.netlify.app/
+- https://nfts-apartment-referrals.netlify.app/
 
 ### Video Demo
 

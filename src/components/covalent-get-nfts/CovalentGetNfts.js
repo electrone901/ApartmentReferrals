@@ -41,9 +41,9 @@ function CovalentGetNfts({ account, providerSave }) {
   }
 
   const covalentNfts = async () => {
-    let ENSName = await providerSave.resolveName(ensNameInput)
+    // let ENSName = await providerSave.resolveName(ensNameInput)
+   let  ENSName = '0xf4eA652F5B7b55f1493631Ea4aFAA63Fe0acc27C'
     if (!ENSName) {
-      ENSName = '0xf4eA652F5B7b55f1493631Ea4aFAA63Fe0acc27C'
     }
     const covalentAPI = 'ckey_d4115699196e4d238fa138e180c'
 

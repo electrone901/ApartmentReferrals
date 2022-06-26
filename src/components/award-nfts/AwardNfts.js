@@ -16,6 +16,8 @@ import { ToastContainer } from 'react-toast'
 function AwardNfts() {
   const apiKeyport = '5aca4bfa-4460-4000-ada2-dfe2b88831e8'
   const [image, setImage] = useState('')
+  const [response, setResponse] = useState('')
+  console.log('🚀response', response)
   const [tenantName, setTenantName] = useState('Metaverse4life.eth')
   const [description, setDescription] = useState(
     'This tenant always paid on time. She was always clean. I definitely reccomend her for with this NFT landloard  referral for being a great tenant!',
@@ -31,18 +33,30 @@ function AwardNfts() {
 
   const nftPortFunc = (e) => {
     e.preventDefault()
+    console.log('🚀tenantName', tenantName, file_url, mintAddress)
+
+    // const att = {
+    //   name: ""
+    // }
+
     fetch('https://api.nftport.xyz/v0/mints/easy/urls', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Authorization: '5aca4bfa-4460-4000-ada2-dfe2b88831e8',
       },
-      body: `{"chain":"polygon","name":${tenantName},"description":"Mydescription","file_url":${file_url},"mint_to_address":${mintAddress}}`,
+      body: `{"chain":"polygon","name":"Metaverse.eth","description":"Mydescription","file_url":"https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80","mint_to_address":"0xf4eA652F5B7b55f1493631Ea4aFAA63Fe0acc27C"}`,
+      // body: `{"chain":"polygon","name":${tenantName},"description":"Mydescription","file_url":${file_url},"mint_to_address":${mintAddress}}`,
     })
       .then((response) => {
         console.log(response)
         showSuccess()
         setCodeHash(response)
+        return response.json()
+      })
+      .then((data) => {
+        console.log('🚀data', data)
+        setResponse(data)
       })
       .catch((err) => {
         console.error(err)
@@ -57,7 +71,6 @@ function AwardNfts() {
       // mintAddress = '0xAF67cbD8fb00759C3b4667beAcfBB3600e25476A'
       // mintAddress = '0x5Df598c222C4A7e8e4AB9f347dcBd924B6458382'
     }
-    console.log(' image', event.target.files[0])
     const form = new FormData()
     form.append('file', event.target.files[0])
 
@@ -97,7 +110,7 @@ function AwardNfts() {
         style={{ minHeight: '80vh', paddingBottom: '3rem' }}
       >
         <div>
-          {codeHash ? (
+          {response ? (
             <Card className="code-hash">
               <Typography gutterBottom className="title">
                 Your NFT was minted succesfully 🎉
@@ -106,7 +119,7 @@ function AwardNfts() {
               <Typography gutterBottom variant="subtitle1">
                 Confirmation Transaction:
               </Typography>
-              <p> {codeHash.transaction_hash}</p>
+              <p> {response.transaction_external_url}</p>
 
               <br />
               <p>MintedAddress:</p>
