@@ -22,10 +22,6 @@ import { useParams, useLocation } from 'react-router-dom'
 import './CovalentGetNfts.css'
 
 function CovalentGetNfts({ account, providerSave }) {
-  console.log(
-    '🚀 ~ file: covalentGetNfts.js ~ line 25 ~ CovalentGetNfts ~ providerSave',
-    providerSave,
-  )
   const { recipeId } = useParams()
   const [loading, setLoading] = useState(false)
   const userWallet = '0xAF67cbD8fb00759C3b4667beAcfBB3600e25476A'
@@ -43,18 +39,13 @@ function CovalentGetNfts({ account, providerSave }) {
   }
 
   const covalentNfts = async () => {
-    // const ENSName = await providerSave.resolveName(ensNameInput)
     const covalentAPI = 'ckey_d4115699196e4d238fa138e180c'
     const ENSName = '0xf4eA652F5B7b55f1493631Ea4aFAA63Fe0acc27C'
     try {
       const nfts = await fetch(
         `https://api.covalenthq.com/v1/137/address/${ENSName}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=false&key=${covalentAPI}`,
       )
-      // const nfts = await fetch(
-      //   `https://api.covalenthq.com/v1/80001/tokens/${chefContractAddress}/nft_token_ids/?quote-currency=USD&format=JSON&key=${covalentAPI}`,
-      // )
       const allNFTS = await nfts.json()
-      console.log('my =>>>>>>  allNFTS', allNFTS)
       if (allNFTS) {
         setNfts(allNFTS)
         setItems(allNFTS?.data?.items)
