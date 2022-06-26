@@ -14,7 +14,7 @@ If you are the owner you can register your apartment. Apartment Referrals is a p
 
 ### Video Demo
 
-- coming
+- coming soon 
 
 # deployed Address
 
