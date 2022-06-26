@@ -95,7 +95,7 @@ function App() {
           <Route path="/" element={<Companies />} />
           <Route path="apartment/:id" element={<Apartment />} />
           <Route path="/post-apartment" element={<PostApartment />} />
-          <Route path="/search" element={<CovalentGetNfts />} />
+          <Route path="/search" element={<CovalentGetNfts providerSave={providerSave} />} />
           <Route path="/award" element={<AwardNfts />} />
         </Routes>
       </div>

@@ -21,7 +21,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import { useParams, useLocation } from 'react-router-dom'
 import './CovalentGetNfts.css'
 
-function CovalentGetNfts({ account }) {
+function CovalentGetNfts({ account, providerSave }) {
   const { recipeId } = useParams()
   const [loading, setLoading] = useState(false)
   const userWallet = '0xAF67cbD8fb00759C3b4667beAcfBB3600e25476A'
@@ -29,13 +29,19 @@ function CovalentGetNfts({ account }) {
   const [items, setItems] = useState([])
   console.log('items', items)
   const [data, setData] = useState({})
+  const [ensNameInput, setEnsNameInput] = useState('albert.eth')
   const { state = {} } = useLocation()
 
+  const search = async (e) => {
+    e.preventDefault()
+    // takes in  ensDomain & returns the wallet address
+    var result = await providerSave.resolveName(ensNameInput)
+  }
+
   const covalentNfts = async () => {
+    const ENSName = await providerSave.resolveName(ensNameInput)
     const covalentAPI = 'ckey_d4115699196e4d238fa138e180c'
-    // const chefContractAddress = '0x1a2FCb5F2704f1fF8eFF26668f63D001b42bF80B'
-    // const ENSName = 'Metaverse4life.eth'
-    const ENSName = '0xf4eA652F5B7b55f1493631Ea4aFAA63Fe0acc27C'
+  
     try {
       const nfts = await fetch(
         `https://api.covalenthq.com/v1/137/address/${ENSName}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=false&key=${covalentAPI}`,

@@ -44,11 +44,8 @@ function Navbar({
 
   const search = async (e) => {
     e.preventDefault()
-    console.log('click')
     // takes in  ensDomain & returns the wallet address
     var result = await providerSave.resolveName('albert.eth')
-    // var result = await providerSave.resolveName('metaverse4life.eth')
-    console.log('🚀 ~ file: Navbar.js ~ line 47 ~ search ~ result', result)
   }
 
   return (
